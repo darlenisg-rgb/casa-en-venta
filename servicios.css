@@ -1,0 +1,63 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+body { background: #fff; color: #444; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #eee; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #333; text-decoration: none; font-weight: 700; }
+.logo span { color: #d4a373; }
+.menu { display: flex; list-style: none; }
+.menu a { color: #666; text-decoration: none; margin-left: 30px; font-size: 0.85rem; letter-spacing: 1px; }
+
+.servicios-header { text-align: center; padding: 80px 20px; background: #fafafa; }
+.servicios-header span { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; color: #d4a373; }
+.servicios-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-top: 15px; }
+
+.servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; padding: 80px 8%; }
+.servicio-item { text-align: center; padding: 30px; border-bottom: 1px solid #f0f0f0; transition: 0.3s; }
+.servicio-item:hover { border-color: #d4a373; }
+.serv-icon { font-size: 2rem; color: #d4a373; margin-bottom: 20px; }
+.servicio-item h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; font-size: 1.4rem; }
+.servicio-item p { color: #888; line-height: 1.8; font-size: 0.95rem; }
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        padding: 20px 5%;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-direction: row; /* Mantiene los links en línea */
+        flex-wrap: wrap;    /* ¡ESTO ES LO CLAVE! Si no caben, bajan a la siguiente línea */
+        justify-content: center;
+        padding: 0;
+        gap: 10px; /* Espacio entre botones */
+    }
+
+    .menu a {
+        margin-left: 0; /* Quitamos el margen lateral fijo */
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Ajuste del título para que no se corte en móvil */
+    .hero-content h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column; /* Imagen debajo del texto en móvil */
+        height: auto;
+        padding: 50px 8%;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-content p {
+        margin: 20px auto 30px; /* Centra el párrafo */
+    }
+}
